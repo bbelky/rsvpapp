@@ -22,6 +22,7 @@ pipeline {
             sh "pip install -r requirements.txt"  
             sh "python -m pytest tests/test_rsvpapp.py"
 
+
             sh 'export VERSION=$PREVIEW_VERSION && skaffold build -f skaffold.yaml'
 
 
